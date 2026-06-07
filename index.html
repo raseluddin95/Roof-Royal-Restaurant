@@ -29,9 +29,7 @@
             -webkit-tap-highlight-color: transparent;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
+        html { scroll-behavior: smooth; }
 
         body {
             font-family: 'Poppins', sans-serif;
@@ -39,7 +37,7 @@
             color: var(--text-light);
             line-height: 1.6;
             overflow-x: hidden;
-            padding-bottom: 80px; /* Space for sticky bottom nav */
+            padding-bottom: 80px;
         }
 
         /* Utility Components */
@@ -154,9 +152,7 @@
             margin-bottom: 10px;
         }
 
-        .info-item p {
-            font-size: 0.95rem;
-        }
+        .info-item p { font-size: 0.95rem; }
 
         .info-actions {
             display: flex;
@@ -174,23 +170,19 @@
         }
 
         /* 3. Digital Menu Section */
-        .menu-container {
-            padding: 0 20px 40px;
-        }
+        .menu-container { padding: 0 20px 40px; }
 
-        /* Category Tabs (Horizontal Scrollable) */
+        /* Category Tabs */
         .category-tabs {
             display: flex;
             gap: 10px;
             overflow-x: auto;
             padding-bottom: 15px;
             margin-bottom: 30px;
-            scrollbar-width: none; /* Firefox */
+            scrollbar-width: none;
         }
 
-        .category-tabs::-webkit-scrollbar {
-            display: none; /* Safari/Chrome */
-        }
+        .category-tabs::-webkit-scrollbar { display: none; }
 
         .tab-btn {
             padding: 10px 20px;
@@ -235,11 +227,10 @@
             object-fit: cover;
             border-radius: 12px;
             border: 1px solid var(--border-glass);
+            flex-shrink: 0;
         }
 
-        .menu-details {
-            flex: 1;
-        }
+        .menu-details { flex: 1; }
 
         .menu-meta {
             display: flex;
@@ -269,10 +260,26 @@
             overflow: hidden;
         }
 
-        /* 4. Special Offers Section */
-        .offers-section {
-            padding: 0 20px 40px;
+        /* Menu Loading / Error States */
+        .menu-loading, .menu-error {
+            text-align: center;
+            padding: 40px 20px;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            grid-column: 1 / -1;
         }
+
+        .menu-loading i, .menu-error i {
+            display: block;
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: var(--gold);
+        }
+
+        .menu-error i { color: #e11d48; }
+
+        /* 4. Special Offers Section */
+        .offers-section { padding: 0 20px 40px; }
 
         .offer-slider {
             display: flex;
@@ -282,9 +289,7 @@
             scrollbar-width: none;
         }
 
-        .offer-slider::-webkit-scrollbar {
-            display: none;
-        }
+        .offer-slider::-webkit-scrollbar { display: none; }
 
         .offer-card {
             min-width: 280px;
@@ -320,9 +325,7 @@
         }
 
         /* 5. Order Form Section */
-        .order-section {
-            padding: 0 20px 40px;
-        }
+        .order-section { padding: 0 20px 40px; }
 
         .order-form-container {
             padding: 25px;
@@ -330,9 +333,7 @@
             margin: 0 auto;
         }
 
-        .form-group {
-            margin-bottom: 15px;
-        }
+        .form-group { margin-bottom: 15px; }
 
         .form-group label {
             display: block;
@@ -360,9 +361,7 @@
         }
 
         /* 6. Map Section */
-        .map-section {
-            padding: 0 20px 40px;
-        }
+        .map-section { padding: 0 20px 40px; }
 
         .map-container {
             height: 250px;
@@ -411,16 +410,14 @@
             transition: var(--transition);
         }
 
-        .social-icons a:hover {
-            color: var(--gold);
-        }
+        .social-icons a:hover { color: var(--gold); }
 
         .copyright {
             font-size: 0.75rem;
             color: var(--text-muted);
         }
 
-        /* Sticky Bottom Navigation (Mobile Native Feel) */
+        /* Sticky Bottom Navigation */
         .bottom-nav {
             position: fixed;
             bottom: 0;
@@ -452,11 +449,9 @@
             margin-bottom: 2px;
         }
 
-        .nav-item.active, .nav-item:hover {
-            color: var(--gold);
-        }
+        .nav-item.active, .nav-item:hover { color: var(--gold); }
 
-        /* Floating Action Buttons (Desktop / Quick access) */
+        /* Floating Action Buttons */
         .fab-container {
             position: fixed;
             bottom: 85px;
@@ -491,7 +486,13 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Desktop Media Queries */
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .spin { animation: spin 1s linear infinite; }
+
+        /* Desktop */
         @media (min-width: 768px) {
             header { height: 60vh; }
             .hero-content h1 { font-size: 4rem; }
@@ -509,6 +510,7 @@
 </head>
 <body>
 
+    <!-- ═══════════════════════════ HERO ═══════════════════════════ -->
     <header id="home">
         <div class="hero-content">
             <h1>Roof Royal</h1>
@@ -517,6 +519,7 @@
         </div>
     </header>
 
+    <!-- ═══════════════════════════ INFO ═══════════════════════════ -->
     <section class="info-section glass-panel">
         <div class="info-grid">
             <div class="info-item">
@@ -531,101 +534,100 @@
         <div class="info-actions">
             <a href="tel:+8801700000000" class="btn btn-outline"><i class="fa-solid fa-phone"></i> Call Now</a>
             <a href="https://wa.me/8801700000000" target="_blank" class="btn btn-outline"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
-            <a href="https://maps.app.goo.gl/EQYhDR7L3bE8JxHi7⁠�" target="_blank" class="btn btn-outline"><i class="fa-solid fa-map-location-dot"></i> Directions</a>
+            <a href="https://maps.app.goo.gl/EQYhDR7L3bE8JxHi7" target="_blank" class="btn btn-outline"><i class="fa-solid fa-map-location-dot"></i> Directions</a>
         </div>
     </section>
 
+    <!-- ═══════════════════════════ OFFERS ═══════════════════════════ -->
     <section class="offers-section" id="offers">
         <h2 class="section-title">Special Offers</h2>
-        <div class="offer-slider">
-            <div class="offer-card glass-panel">
-                <span class="offer-badge">Save 15%</span>
-                <h3>Couple Combo</h3>
-                <p>1x Loaded Pizza, 2x Mocktails, 1x Fries.</p>
-                <span class="menu-price">৳799</span>
+        <div class="offer-slider" id="offers-container">
+            <!-- Dynamically loaded from menu.json -->
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════ MENU ═══════════════════════════ -->
+    <section class="menu-container" id="menu">
+        <h2 class="section-title">Digital Menu</h2>
+
+        <!-- Category tabs — built dynamically -->
+        <div class="category-tabs" id="category-tabs"></div>
+
+        <!-- Menu grids — built dynamically -->
+        <div id="menu-grids-wrapper"></div>
+    </section>
+
+    <!-- ═══════════════════════════ ORDER FORM ═══════════════════════════ -->
+    <section class="order-section" id="order">
+        <h2 class="section-title">Place an Order</h2>
+        <div class="order-form-container glass-panel">
+            <div class="form-group">
+                <label>Your Name</label>
+                <input type="text" class="form-control" placeholder="e.g. Rahman">
             </div>
-            <div class="offer-card glass-panel">
-                <span class="offer-badge">Today's Special</span>
-                <h3>Royal Biriyani Deal</h3>
-                <p>Kacchi Biriyani with Borhani & Jilapi.</p>
-                <span class="menu-price">৳380</span>
+            <div class="form-group">
+                <label>Phone Number</label>
+                <input type="tel" class="form-control" placeholder="+880 17xx-xxxxxx">
+            </div>
+            <div class="form-group">
+                <label>Table / Delivery Note</label>
+                <textarea class="form-control" rows="3" placeholder="Table 4 or delivery address..."></textarea>
+            </div>
+            <button class="btn btn-gold" style="width:100%">
+                <i class="fa-brands fa-whatsapp"></i> Send Order via WhatsApp
+            </button>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════ MAP ═══════════════════════════ -->
+    <section class="map-section" id="location">
+        <h2 class="section-title">Find Us</h2>
+        <div class="map-container">
+            <div class="map-fallback">
+                <i class="fa-solid fa-map-location-dot" style="font-size:2.5rem; color:var(--gold); margin-bottom:15px;"></i>
+                <p style="margin-bottom:15px; color:var(--text-muted);">Agnibina Road, Jhenaidah</p>
+                <a href="https://maps.app.goo.gl/EQYhDR7L3bE8JxHi7" target="_blank" class="btn btn-gold">
+                    <i class="fa-solid fa-diamond-turn-right"></i> Open in Maps
+                </a>
             </div>
         </div>
     </section>
 
-    <section class="menu-container" id="menu">
-        <h2 class="section-title">Digital Menu</h2>
-        
-        <div class="category-tabs">
-            <button class="tab-btn active" onclick="switchCategory('starters')">Starters</button>
-            <button class="tab-btn" onclick="switchCategory('main')">Main Course</button>
-            <button class="tab-btn" onclick="switchCategory('biriyani')">Biriyani</button>
-            <button class="tab-btn" onclick="switchCategory('pizza')">Pizza & Fast Food</button>
-            <button class="tab-btn" onclick="switchCategory('drinks')">Drinks</button>
-            <button class="tab-btn" onclick="switchCategory('desserts')">Desserts</button>
+    <!-- ═══════════════════════════ FOOTER ═══════════════════════════ -->
+    <footer>
+        <div class="footer-logo">Roof Royal</div>
+        <p style="font-size:0.85rem; color:var(--text-muted);">Rooftop Dining · Jhenaidah</p>
+        <div class="social-icons">
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-tiktok"></i></a>
         </div>
+        <p class="copyright">© 2025 Roof Royal Restaurant. All rights reserved.</p>
+    </footer>
 
-        <div id="starters" class="menu-grid active">
-            <div class="menu-card glass-panel">
-                <img src="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=150&q=80" alt="Creamy Soup" class="menu-img">
-                <div class="menu-details">
-                    <div class="menu-meta">
-                        <span class="menu-title">Thai Clear Soup</span>
-                        <span class="menu-price">৳180</span>
-                    </div>
-                    <p class="menu-desc">Healthy clear soup with fresh herbs, chicken, and prawns.</p>
-                </div>
-            </div>
-            <div class="menu-card glass-panel">
-                <img src="https://images.unsplash.com/photo-1562967914-608f82629710?auto=format&fit=crop&w=150&q=80" alt="Chicken Fries" class="menu-img">
-                <div class="menu-details">
-                    <div class="menu-meta">
-                        <span class="menu-title">Peri Peri Poultry Strips</span>
-                        <span class="menu-price">৳240</span>
-                    </div>
-                    <p class="menu-desc">Crispy golden deep-fried chicken strips dusted with hot peri peri.</p>
-                </div>
-            </div>
-        </div>
+    <!-- ═══════════════════════════ BOTTOM NAV ═══════════════════════════ -->
+    <nav class="bottom-nav">
+        <a href="#home" class="nav-item active"><i class="fa-solid fa-house"></i> Home</a>
+        <a href="#menu" class="nav-item"><i class="fa-solid fa-utensils"></i> Menu</a>
+        <a href="#offers" class="nav-item"><i class="fa-solid fa-tags"></i> Offers</a>
+        <a href="#order" class="nav-item"><i class="fa-solid fa-bag-shopping"></i> Order</a>
+        <a href="#location" class="nav-item"><i class="fa-solid fa-location-dot"></i> Map</a>
+    </nav>
 
-        <div id="main" class="menu-grid">
-            <div class="menu-card glass-panel">
-                <img src="https://images.unsplash.com/photo-1432139555190-58524dae6a55?auto=format&fit=crop&w=150&q=80" alt="Sizzling Steak" class="menu-img">
-                <div class="menu-details">
-                    <div class="menu-meta">
-                        <span class="menu-title">Sizzling Chicken Steak</span>
-                        <span class="menu-price">৳450</span>
-                    </div>
-                    <p class="menu-desc">Served hot with sautéed vegetables, mushroom sauce, and fried rice.</p>
-                </div>
-            </div>
-        </div>
+    <!-- ═══════════════════════════ FLOATING BUTTONS ═══════════════════════════ -->
+    <div class="fab-container">
+        <a href="https://wa.me/8801700000000" target="_blank" class="fab fab-wp" title="WhatsApp">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+        <a href="tel:+8801700000000" class="fab fab-call" title="Call">
+            <i class="fa-solid fa-phone"></i>
+        </a>
+    </div>
 
-        <div id="biriyani" class="menu-grid">
-            <div class="menu-card glass-panel">
-                <img src="https://images.unsplash.com/photo-1633945274405-b6c8069047b0?auto=format&fit=crop&w=150&q=80" alt="Mutton Kacchi" class="menu-img">
-                <div class="menu-details">
-                    <div class="menu-meta">
-                        <span class="menu-title">Premium Mutton Kacchi</span>
-                        <span class="menu-price">৳350</span>
-                    </div>
-                    <p class="menu-desc">Basmati rice slow-cooked with tender mutton pieces and aromatic spices.</p>
-                </div>
-            </div>
-        </div>
-
-        <div id="pizza" class="menu-grid">
-            <div class="menu-card glass-panel">
-                <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=150&q=80" alt="Pizza" class="menu-img">
-                <div class="menu-details">
-                    <div class="menu-meta">
-                        <span class="menu-title">Royal Cheese Blast Pizza</span>
-                        <span class="menu-price">৳550</span>
-                    </div>
-                    <p class="menu-desc">10-inch loaded chicken pizza overflowing with liquid mozzarella.</p>
-                </div>
-            </div>
-        </div>
-
-        <div id="drinks" class="menu-grid">
-            <div class="menu-card gla
+    <!-- ═══════════════════════════════════════════════════════════════
+         MENU LOADER — reads menu.json and builds the UI dynamically.
+         To update the menu, edit menu.json only. Do NOT touch this script.
+    ════════════════════════════════════════════════════════════════ -->
+    <script>
+        // ─── Active category tracker ───────────────────────────────
+        let activeCategory 
