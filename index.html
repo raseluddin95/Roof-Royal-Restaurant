@@ -44,23 +44,34 @@
         .offer-order-btn{display:inline-flex;align-items:center;gap:6px;background:rgba(223,183,108,0.15);border:1px solid var(--gold);color:var(--gold);padding:7px 16px;border-radius:20px;font-size:0.8rem;font-weight:500;cursor:pointer;transition:var(--transition);font-family:'Poppins',sans-serif;}
         .offer-order-btn:hover{background:var(--gold);color:#111;}
 
-        /* MENU */
+        /* MENU (Updated for Middle Alignment) */
         .menu-container{padding:0 20px 40px;}
-        .category-tabs{display:flex;gap:10px;overflow-x:auto;padding-bottom:15px;margin-bottom:30px;scrollbar-width:none;}
+        .category-tabs{display:flex;gap:10px;overflow-x:auto;justify-content:center;padding-bottom:15px;margin-bottom:30px;scrollbar-width:none;}
         .category-tabs::-webkit-scrollbar{display:none;}
         .tab-btn{padding:10px 20px;border-radius:20px;background:rgba(255,255,255,0.05);border:1px solid transparent;color:var(--text-muted);white-space:nowrap;font-size:0.9rem;cursor:pointer;transition:var(--transition);font-family:'Poppins',sans-serif;}
         .tab-btn.active{background:var(--gold);color:#111;font-weight:500;}
+        
         .menu-grid{display:none;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;}
         .menu-grid.active{display:grid;animation:fadeIn 0.4s ease-in-out;}
-        .menu-card{display:flex;gap:15px;padding:15px;align-items:center;cursor:pointer;transition:var(--transition);}
+        .menu-card{display:flex;gap:15px;padding:15px;align-items:center;cursor:pointer;transition:var(--transition);position:relative;overflow:hidden;}
         .menu-card:hover{border-color:rgba(223,183,108,0.4);transform:translateY(-2px);}
-        .menu-img{width:90px;height:90px;object-fit:cover;border-radius:12px;border:1px solid var(--border-glass);flex-shrink:0;}
-        .menu-details{flex:1;}
-        .menu-meta{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:5px;}
-        .menu-title{font-size:1rem;font-weight:600;color:var(--text-light);}
-        .menu-price{color:var(--gold);font-weight:600;font-size:1rem;}
+        
+        /* Menu Sold out style */
+        .menu-card.item-sold-out{opacity:0.55;cursor:not-allowed;}
+        .menu-card.item-sold-out:hover{transform:none;border-color:var(--border-glass);}
+        
+        .menu-img-wrapper{position:relative;width:90px;height:90px;flex-shrink:0;}
+        .menu-img{width:100%;height:100%;object-fit:cover;border-radius:12px;border:1px solid var(--border-glass);}
+        .menu-card-badge{position:absolute;bottom:-4px;left:50%;transform:translateX(-50%);background:#dfb76c;color:#111;font-size:0.65rem;font-weight:600;padding:2px 8px;border-radius:8px;white-space:nowrap;box-shadow:0 2px 6px rgba(0,0,0,0.4);}
+        .menu-card-badge.soldout-badge{background:#e11d48;color:#fff;}
+        
+        .menu-details{flex:1;min-width:0;}
+        .menu-meta{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:5px;gap:10px;}
+        .menu-title{font-size:1rem;font-weight:600;color:var(--text-light);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+        .menu-price{color:var(--gold);font-weight:600;font-size:1rem;flex-shrink:0;}
         .menu-desc{font-size:0.8rem;color:var(--text-muted);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
         .tap-order-tag{font-size:0.75rem;color:var(--gold);margin-top:7px;display:block;opacity:0.85;}
+        .tap-order-tag.soldout-text{color:#e11d48;font-weight:500;}
 
         /* MODAL */
         .modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.8);z-index:200;align-items:flex-end;justify-content:center;}
@@ -72,7 +83,6 @@
         .modal-close{background:rgba(255,255,255,0.08);border:none;color:var(--text-muted);width:34px;height:34px;border-radius:50%;cursor:pointer;font-size:1rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:var(--transition);}
         .modal-close:hover{background:rgba(255,255,255,0.15);color:var(--text-light);}
 
-        /* Quantity row */
         .qty-row{display:flex;align-items:center;background:rgba(255,255,255,0.04);border-radius:12px;padding:10px 14px;margin-bottom:14px;}
         .qty-label{font-size:0.85rem;color:var(--text-muted);}
         .qty-controls{display:flex;align-items:center;gap:12px;margin-left:auto;}
@@ -80,7 +90,6 @@
         .qty-btn:hover{background:var(--gold);color:#111;border-color:var(--gold);}
         .qty-num{font-size:1.1rem;font-weight:600;min-width:26px;text-align:center;}
 
-        /* Delivery toggle */
         .delivery-toggle{display:flex;gap:0;margin-bottom:14px;border-radius:10px;overflow:hidden;border:1px solid var(--border-glass);}
         .dtoggle-btn{flex:1;padding:10px;background:rgba(255,255,255,0.04);border:none;color:var(--text-muted);font-family:'Poppins',sans-serif;font-size:0.85rem;cursor:pointer;transition:var(--transition);}
         .dtoggle-btn.active{background:var(--gold);color:#111;font-weight:600;}
@@ -98,7 +107,6 @@
         .order-section{padding:0 20px 40px;}
         .order-form-container{padding:25px;max-width:500px;margin:0 auto;}
 
-        /* Menu select in order form */
         .order-menu-select{width:100%;background:rgba(255,255,255,0.05);border:1px solid var(--border-glass);padding:11px 14px;border-radius:10px;color:var(--text-light);font-family:'Poppins',sans-serif;font-size:0.92rem;transition:var(--transition);appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23dfb76c' d='M6 8L0 0h12z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;}
         .order-menu-select:focus{outline:none;border-color:var(--gold);}
         .order-menu-select option{background:#1a1a22;color:var(--text-light);}
@@ -121,7 +129,6 @@
         .fab{width:50px;height:50px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;text-decoration:none;box-shadow:0 4px 15px rgba(0,0,0,0.4);transition:var(--transition);font-size:1.3rem;}
         .fab-wp{background-color:#25D366;}.fab-call{background-color:#0284c7;}.fab:hover{transform:scale(1.1);}
 
-        /* Loading Spinner */
         .loading-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.85);z-index:9999;align-items:center;justify-content:center;flex-direction:column;gap:15px;}
         .spinner{width:50px;height:50px;border:5px solid rgba(223,183,108,0.1);border-top-color:var(--gold);border-radius:50%;animation:spin 1s linear infinite;}
         @keyframes spin{to{transform:rotate(360deg);}}
@@ -134,6 +141,7 @@
             .info-section,.menu-container,.offers-section,.order-section,.map-section{max-width:1000px;margin-left:auto;margin-right:auto;}
             .info-section{margin-top:-60px;}.bottom-nav{display:none;}body{padding-bottom:0;}
             .fab-container{bottom:30px;}.modal-box{border-radius:20px;margin-bottom:40px;}
+            .category-tabs{justify-content:center;}
         }
     </style>
 </head>
@@ -264,6 +272,7 @@
     <a href="tel:+8801979600757" class="fab fab-call"><i class="fa-solid fa-phone"></i></a>
 </div>
 
+<!-- POPUP ORDER MODAL -->
 <div class="modal-overlay" id="order-modal" onclick="closeModalOverlay(event)">
     <div class="modal-box">
         <div class="modal-header">
@@ -320,12 +329,11 @@
 
 <script>
 /* ================================================================
-   ⚙️ CONFIGURATION: ADAPTED FOR GENERAL APPS SCRIPT OBJECTS
+   ⚙️ CONFIGURATION: FIXED DYNAMIC ALIGNMENT & FALLBACK IMAGES
    ================================================================ */
 const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxtKHFd2VwkkZWISUS-SP6Uic1C77TUA2fZgX01YMCgirgTNfGdCofGsOg3cRIxId9K/exec";
 const WA_NUM = "8801979600757";
 
-// গ্লোবাল ভ্যারিয়েবল এবং সেটিংস
 let RAW_SHEET_DATA = [];
 let STRUCTURED_MENU = { offers: [], categories: [] };
 let modalQty = 1, modalPriceNum = 0, modalOrderType = "dine";
@@ -335,7 +343,6 @@ function toggleSpinner(show) {
     document.getElementById("loading-layer").style.display = show ? "flex" : "none";
 }
 
-/* ─── Fetch Flat Data From Your Script ──────────────── */
 async function fetchMenuData() {
     toggleSpinner(true);
     try {
@@ -346,11 +353,10 @@ async function fetchMenuData() {
             RAW_SHEET_DATA = data;
             processRawData(data);
         } else {
-            console.error("Invalid response format. Expected an Array.");
+            console.error("Invalid response format.");
         }
     } catch (err) {
-        console.error("Error fetching sheet data:", err);
-        alert("মেনু ডাটা লোড করা যায়নি। অনুগ্রহ করে গুগল শিট ডেপ্লয়মেন্ট চেক করুন।");
+        console.error("Error fetching data:", err);
     } finally {
         buildOffers();
         buildMenu();
@@ -358,14 +364,12 @@ async function fetchMenuData() {
     }
 }
 
-/* ─── Process Your Custom Sheet Columns Dynamically ── */
 function processRawData(rows) {
     let categoriesMap = {};
     let categoryOrder = [];
     
+    // ১ম পাস: বেসিক ডাটা এবং ক্যাটাগরি ম্যাপিং রেডি করা
     rows.forEach(function(row) {
-        // কলামের নাম শিটের প্রথম হেডার রো থেকে অটোম্যাটিক ডিটেক্ট হবে
-        // আপনার শিটের কলাম হেডার ছোট বা বড় হাতের যাই হোক, তা ম্যাচ করবে
         let catId    = (row["Category ID"] || row["category id"] || row["Category_ID"] || row["Category"] || "").toString().trim().toLowerCase();
         let catLabel = (row["Category Label"] || row["category label"] || row["Category_Label"] || row["Category Name"] || row["Category"] || "").toString().trim();
         let itemName = (row["Item Name"] || row["item name"] || row["Name"] || row["name"] || "").toString().trim();
@@ -373,20 +377,19 @@ function processRawData(rows) {
         let desc     = (row["Description"] || row["description"] || row["Details"] || "").toString().trim();
         let img      = (row["Image URL"] || row["image url"] || row["Image"] || row["image"] || "").toString().trim();
         let isOffer  = (row["Is Offer"] || row["is offer"] || row["Offer"] || "").toString().trim().toLowerCase();
-        let badge    = (row["Badge"] || row["badge"] || "Special").toString().trim();
+        let badge    = (row["Badge"] || row["badge"] || "").toString().trim();
 
-        if (!itemName) return; // খাবারের নাম না থাকলে স্কিপ করবে
+        if (!itemName) return;
 
-        // যদি কোনো আইটেম স্পেশাল অফার হয় (যেমন Is Offer কলামে Yes বা True লেখা থাকে)
         if (isOffer === "yes" || isOffer === "true" || catId === "offers" || catId === "offer") {
             STRUCTURED_MENU.offers.push({
-                badge: badge,
+                badge: badge || "Special",
                 title: itemName,
                 description: desc,
-                priceNum: price
+                priceNum: price,
+                isSoldOut: (badge.toLowerCase() === "soldout" || badge.toLowerCase() === "sold out" || badge.toLowerCase() === "unavailable")
             });
         } else {
-            // জেনারেল ক্যাটাগরি প্রসেসিং
             if (!catId) catId = "general";
             if (!catLabel) catLabel = "Our Menu";
 
@@ -394,51 +397,74 @@ function processRawData(rows) {
                 categoriesMap[catId] = {
                     id: catId,
                     label: catLabel,
-                    items: []
+                    items: [],
+                    firstValidImage: "" // ক্যাটাগরির ১ম সঠিক ছবি রাখার জন্য
                 };
                 categoryOrder.push(catId);
+            }
+
+            // যদি এই আইটেমে ভ্যালিড ইমেজের লিংক থাকে, তবে ক্যাটাগরির ডিফল্ট হিসেবে সেট হবে
+            if (img && img !== "" && img.toLowerCase() !== "blank" && !categoriesMap[catId].firstValidImage) {
+                categoriesMap[catId].firstValidImage = img;
             }
 
             categoriesMap[catId].items.push({
                 name: itemName,
                 priceNum: price,
                 description: desc,
-                image: img || "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=150&q=80"
+                rawImage: img, // পরে প্রসেস হবে
+                badge: badge,
+                isSoldOut: (badge.toLowerCase() === "soldout" || badge.toLowerCase() === "sold out" || badge.toLowerCase() === "unavailable")
             });
         }
+    });
+
+    // ২য় পাস: ব্ল্যাঙ্ক ইমেজে ক্যাটাগরির ১ম ভ্যালিড ইমেজ পুশ করা
+    categoryOrder.forEach(function(catId) {
+        let cat = categoriesMap[catId];
+        let fallback = cat.firstValidImage || "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=150&q=80";
+        
+        cat.items.forEach(function(item) {
+            if (!item.rawImage || item.rawImage === "" || item.rawImage.toLowerCase() === "blank") {
+                item.image = fallback;
+            } else {
+                item.image = item.rawImage;
+            }
+        });
     });
 
     STRUCTURED_MENU.categories = categoryOrder.map(id => categoriesMap[id]);
 }
 
-/* ─── Build Offers ─────────────────────────────────── */
 function buildOffers() {
     const container = document.getElementById("offers-container");
     if (!STRUCTURED_MENU.offers || STRUCTURED_MENU.offers.length === 0) {
-        // অফার না থাকলে সেকশনটি সুন্দর দেখানোর জন্য কিছু ডেমো ডেটা দেওয়া হলো
         container.innerHTML = `
             <div class="offer-card">
-                <span class="offer-badge">Welcome</span>
-                <h3>Roof Royal Special</h3>
-                <p>Explore our premium live menu below and get instant food served at rooftop.</p>
-                <div class="offer-price">Fresh & Live</div>
-                <button class="offer-order-btn" onclick="location.href='#menu'"><i class="fa-solid fa-utensils"></i> View All Menu</button>
+                <span class="offer-badge">Live</span>
+                <h3>Roof Royal Specials</h3>
+                <p>Check out our real-time digital menu below to get premium rooftop delights.</p>
+                <div class="offer-price">Freshly Served</div>
+                <button class="offer-order-btn" onclick="location.href='#menu'"><i class="fa-solid fa-utensils"></i> View Menu</button>
             </div>`;
         return;
     }
     container.innerHTML = STRUCTURED_MENU.offers.map(function(o) {
         var safe = JSON.stringify(o).replace(/\\/g,"\\\\").replace(/'/g,"\\'");
+        let btnHtml = o.isSoldOut 
+            ? '<button class="offer-order-btn" style="border-color:#e11d48; color:#e11d48; background:none; cursor:not-allowed;" disabled><i class="fa-solid fa-circle-xmark"></i> Sold Out</button>'
+            : '<button class="offer-order-btn" onclick=\'openModal('+safe+')\'><i class="fa-brands fa-whatsapp"></i> Tap to Order</button>';
+            
         return '<div class="offer-card">'+
-            '<span class="offer-badge">'+o.badge+'</span>'+
+            '<span class="offer-badge" style="'+(o.isSoldOut ? 'background:#e11d48;':'')+'">'+o.badge+'</span>'+
             '<h3>'+o.title+'</h3>'+
             '<p>'+o.description+'</p>'+
             '<div class="offer-price">৳'+o.priceNum+'</div>'+
-            '<button class="offer-order-btn" onclick=\'openModal('+safe+')\'><i class="fa-brands fa-whatsapp"></i> Tap to Order</button>'+
+            btnHtml +
         '</div>';
     }).join("");
 }
 
-/* ─── Build Menu ────────────────────────────────────── */
 function buildMenu() {
     var tabsEl = document.getElementById("category-tabs");
     var wrapper = document.getElementById("menu-grids-wrapper");
@@ -446,7 +472,7 @@ function buildMenu() {
     tabsEl.innerHTML = ""; wrapper.innerHTML = "";
 
     if(!STRUCTURED_MENU.categories || STRUCTURED_MENU.categories.length === 0){
-        selectEl.innerHTML = '<option value="">-- নোটিফিকেশন: কোনো ডাটা পাওয়া যায়নি --</option>';
+        selectEl.innerHTML = '<option value="">-- No Items Found --</option>';
         return;
     }
 
@@ -454,7 +480,9 @@ function buildMenu() {
     STRUCTURED_MENU.categories.forEach(function(cat) {
         optHtml += '<optgroup label="'+cat.label+'">';
         cat.items.forEach(function(item, idx) {
-            optHtml += '<option value="'+cat.id+"-"+idx+'" data-price="'+item.priceNum+'">'+item.name+' (৳'+item.priceNum+')</option>';
+            if(!item.isSoldOut) {
+                optHtml += '<option value="'+cat.id+"-"+idx+'" data-price="'+item.priceNum+'">'+item.name+' (৳'+item.priceNum+')</option>';
+            }
         });
         optHtml += '</optgroup>';
     });
@@ -472,12 +500,30 @@ function buildMenu() {
         grid.id = "grid-" + cat.id;
         grid.innerHTML = cat.items.map(function(item) {
             var safe = JSON.stringify(item).replace(/\\/g,"\\\\").replace(/'/g,"\\'");
-            return '<div class="menu-card glass-panel" onclick=\'openModal('+safe+')\'>'+
-                '<img class="menu-img" src="'+item.image+'" alt="'+item.name+'" loading="lazy" onerror="this.src=\'https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=150&q=80\'">'+
+            
+            // ব্যাজ চেক (Sold out বনাম সাধারণ ব্যাজ)
+            let badgeHtml = "";
+            if (item.isSoldOut) {
+                badgeHtml = '<span class="menu-card-badge soldout-badge">Sold Out</span>';
+            } else if (item.badge) {
+                badgeHtml = '<span class="menu-card-badge">'+item.badge+'</span>';
+            }
+
+            let actionHtml = item.isSoldOut
+                ? '<span class="tap-order-tag soldout-text"><i class="fa-solid fa-circle-xmark"></i> Unavailable</span>'
+                : '<span class="tap-order-tag"><i class="fa-brands fa-whatsapp"></i> Tap to Order</span>';
+
+            let clickAction = item.isSoldOut ? "" : 'onclick=\'openModal('+safe+')\'';
+
+            return '<div class="menu-card glass-panel '+(item.isSoldOut ? 'item-sold-out':'')+'" '+clickAction+'>'+
+                '<div class="menu-img-wrapper">'+
+                    '<img class="menu-img" src="'+item.image+'" alt="'+item.name+'" loading="lazy" onerror="this.src=\'https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=150&q=80\'">'+
+                    badgeHtml +
+                '</div>'+
                 '<div class="menu-details">'+
                     '<div class="menu-meta"><span class="menu-title">'+item.name+'</span><span class="menu-price">৳'+item.priceNum+'</span></div>'+
                     '<p class="menu-desc">'+item.description+'</p>'+
-                    '<span class="tap-order-tag"><i class="fa-brands fa-whatsapp"></i> Tap to Order</span>'+
+                    actionHtml +
                 '</div></div>';
         }).join("");
         wrapper.appendChild(grid);
@@ -489,8 +535,8 @@ function switchTab(id) {
     document.querySelectorAll(".menu-grid").forEach(function(g){ g.classList.toggle("active", g.id==="grid-"+id); });
 }
 
-/* ─── Modal Functions ───────────────────────────────── */
 function openModal(item) {
+    if(item.isSoldOut) return;
     modalPriceNum = item.priceNum; modalQty = 1; modalOrderType = "dine";
     document.getElementById("modal-item-name").textContent = item.name || item.title;
     document.getElementById("modal-item-price").textContent = "৳" + modalPriceNum + " per item";
@@ -544,7 +590,6 @@ function sendModalOrder() {
     closeModal();
 }
 
-/* ─── Order Section Form Functions ─────────────────── */
 function changeOrderQty(d) {
     orderQty = Math.max(1, orderQty+d);
     document.getElementById("order-qty-num").textContent = orderQty;
@@ -593,7 +638,6 @@ function sendOrderWhatsApp() {
     window.open("https://wa.me/"+WA_NUM+"?text="+encodeURIComponent(msg),"_blank");
 }
 
-/* ─── Scroll nav highlight ───────────────────────────── */
 var sections = ["home","offers","menu","order","location"];
 window.addEventListener("scroll", function(){
     var current = "home";
@@ -601,7 +645,6 @@ window.addEventListener("scroll", function(){
     document.querySelectorAll(".nav-item").forEach(function(a){ a.classList.toggle("active",a.getAttribute("href")==="#"+current); });
 });
 
-/* ─── Boot/Init ──────────────────────────────────────── */
 document.addEventListener("DOMContentLoaded", function(){
     document.getElementById("order-item").addEventListener("change", function(){ orderQty=1; document.getElementById("order-qty-num").textContent="1"; updateOrderTotal(); });
     fetchMenuData();
