@@ -11,7 +11,7 @@
         :root{--bg-dark:#0f0f12;--card-bg:rgba(24,24,30,0.75);--gold:#dfb76c;--gold-hover:#f3cf8a;--text-light:#f5f5f7;--text-muted:#a1a1aa;--border-glass:rgba(223,183,108,0.15);--radius:16px;--transition:all 0.3s cubic-bezier(0.4,0,0.2,1);}
         *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
         html{scroll-behavior:smooth;}
-        body{font-family:'Poppins',sans-serif;background-color:var(--bg-dark);color:var(--text-light);line-height:1.6;overflow-x:hidden;padding-bottom:90px;}
+        body{font-family:'Poppins',sans-serif;background-color:var(--bg-dark);color:var(--text-light);line-height:1.6;overflow-x:hidden;padding-bottom:100px;}
         .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 24px;border-radius:30px;font-weight:500;text-decoration:none;transition:var(--transition);cursor:pointer;border:none;font-family:'Poppins',sans-serif;}
         .btn-gold{background:linear-gradient(135deg,var(--gold),#b88e3d);color:#111;}
         .btn-gold:hover{background:linear-gradient(135deg,var(--gold-hover),var(--gold));transform:translateY(-2px);box-shadow:0 8px 20px rgba(223,183,108,0.3);}
@@ -32,16 +32,18 @@
         .info-actions{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:20px;padding-top:20px;border-top:1px solid var(--border-glass);}
         .info-actions .btn{font-size:0.85rem;padding:10px 18px;}
 
-        /* OFFERS (1:1 Ratio Right Image - Cafe Mezban Style) */
+        /* OFFERS (Updated with Select Button - Cafe Mezban Style) */
         .offers-section{padding:0 20px 40px;}
         .offer-slider{display:flex;gap:20px;overflow-x:auto;padding-bottom:15px;scrollbar-width:none;}
         .offer-slider::-webkit-scrollbar{display:none;}
-        .offer-card{min-width:310px;max-width:340px;flex:1;display:flex;gap:12px;padding:15px;background:linear-gradient(135deg,rgba(223,183,108,0.12) 0%,rgba(24,24,30,0.85) 100%);position:relative;border-radius:var(--radius);border:1px solid var(--border-glass);align-items:center;}
+        .offer-card{min-width:320px;max-width:350px;flex:1;display:flex;gap:12px;padding:15px;background:linear-gradient(135deg,rgba(223,183,108,0.12) 0%,rgba(24,24,30,0.85) 100%);position:relative;border-radius:var(--radius);border:1px solid var(--border-glass);align-items:center;}
         .offer-left{flex:1;min-width:0;display:flex;flex-direction:column;justify-content:space-between;height:100%;}
-        .offer-badge{align-self:flex-start;background:#e11d48;color:white;font-size:0.7rem;font-weight:600;padding:3px 8px;border-radius:8px;margin-bottom:8px;}
+        .offer-badge{align-self:flex-start;background:#e11d48;color:white;font-size:0.7rem;font-weight:600;padding:3px 8px;border-radius:8px;margin-bottom:6px;}
         .offer-card h3{color:var(--gold);margin-bottom:4px;font-size:1rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
         .offer-card p{font-size:0.78rem;color:var(--text-muted);margin-bottom:8px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
-        .offer-price{color:var(--gold);font-weight:600;font-size:1.05rem;margin-bottom:8px;}
+        .offer-meta-box{display:flex;justify-content:space-between;align-items:center;margin-top:auto;gap:8px;}
+        .offer-price{color:var(--gold);font-weight:600;font-size:1.05rem;}
+        .offer-select-tag{font-size:0.72rem;color:var(--gold);opacity:0.9;border:1px solid rgba(223,183,108,0.3);padding:3px 8px;border-radius:12px;white-space:nowrap;}
         .offer-right{width:95px;height:95px;flex-shrink:0;}
         .offer-img{width:100%;height:100%;object-fit:cover;border-radius:10px;border:1px solid var(--border-glass);aspect-ratio:1/1;}
         .offer-card.item-sold-out{opacity:0.5;}
@@ -72,7 +74,7 @@
         .tap-order-tag{font-size:0.75rem;color:var(--gold);margin-top:7px;display:block;opacity:0.85;}
         .tap-order-tag.soldout-text{color:#e11d48;font-weight:500;}
 
-        /* CART & CHECKOUT AREA (New & Improved) */
+        /* CART & CHECKOUT AREA */
         .cart-table{width:100%;border-collapse:collapse;margin-bottom:20px;font-size:0.88rem;}
         .cart-table th{text-align:left;color:var(--text-muted);padding-bottom:10px;border-bottom:1px solid var(--border-glass);font-weight:500;}
         .cart-table td{padding:12px 0;border-bottom:1px solid rgba(255,255,255,0.03);vertical-align:middle;}
@@ -84,15 +86,15 @@
         .cart-remove{background:none;border:none;color:#e11d48;cursor:pointer;font-size:0.95rem;margin-left:8px;}
         .empty-cart-msg{text-align:center;color:var(--text-muted);padding:30px 10px;font-size:0.9rem;}
 
-        /* FLOATING CART BAR */
-        .floating-cart-bar{display:none;position:fixed;bottom:20px;left:50%;transform:translateX(-50%);width:calc(100% - 40px);max-width:450px;background:linear-gradient(135deg,#b88e3d,var(--gold));color:#111;z-index:999;padding:14px 20px;border-radius:30px;justify-content:between;align-items:center;box-shadow:0 8px 25px rgba(0,0,0,0.5);text-decoration:none;font-weight:600;animation:slideUp 0.3s cubic-bezier(0.4,0,0.2,1);justify-content:space-between;}
+        /* FLOATING CART BAR (Z-Index Set to 150) */
+        .floating-cart-bar{display:none;position:fixed;bottom:20px;left:50%;transform:translateX(-50%);width:calc(100% - 40px);max-width:450px;background:linear-gradient(135deg,#b88e3d,var(--gold));color:#111;z-index:150;padding:14px 20px;border-radius:30px;justify-content:between;align-items:center;box-shadow:0 8px 25px rgba(0,0,0,0.5);text-decoration:none;font-weight:600;animation:slideUp 0.3s cubic-bezier(0.4,0,0.2,1);justify-content:space-between;}
         .floating-cart-bar.show{display:flex;}
         .floating-cart-bar i{font-size:1.1rem;}
 
-        /* POPUP MODAL (Add to Cart style) */
-        .modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.8);z-index:200;align-items:flex-end;justify-content:center;}
+        /* POPUP MODAL (Z-Index increased to 2000 to prevent overlap) */
+        .modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.8);z-index:2000;align-items:flex-end;justify-content:center;}
         .modal-overlay.open{display:flex;animation:fadeIn 0.2s ease;}
-        .modal-box{background:#1a1a22;border:1px solid var(--border-glass);border-radius:20px 20px 0 0;padding:28px 22px 35px;width:100%;max-width:440px;animation:slideUp 0.3s cubic-bezier(0.4,0,0.2,1);max-height:85vh;overflow-y:auto;}
+        .modal-box{background:#1a1a22;border:1px solid var(--border-glass);border-radius:20px 20px 0 0;padding:28px 22px 35px;width:100%;max-width:440px;animation:slideUp 0.3s cubic-bezier(0.4,0,0.2,1);max-height:85vh;overflow-y:auto;position:relative;}
         .modal-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px;}
         .modal-item-name{font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--gold);}
         .modal-item-price{color:var(--text-muted);font-size:0.9rem;}
@@ -316,7 +318,7 @@ const WA_NUM = "8801979600757";
 
 let RAW_SHEET_DATA = [];
 let STRUCTURED_MENU = { offers: [], categories: [] };
-let MY_CART = []; // কাস্টমারের কার্ট ডাটা হোল্ডার
+let MY_CART = []; 
 
 let currentItemToCart = null;
 let modalQty = 1;
@@ -402,7 +404,6 @@ function processRawData(rows) {
         }
     });
 
-    // ছবি ফলব্যাক প্রসেস
     categoryOrder.forEach(function(catId) {
         let cat = categoriesMap[catId];
         let fallback = cat.firstValidImage || defaultImg;
@@ -414,7 +415,7 @@ function processRawData(rows) {
     STRUCTURED_MENU.categories = categoryOrder.map(id => categoriesMap[id]);
 }
 
-/* 1:1 SQUARE IMAGE RATIO IN OFFERS (Cafe Mezban Style) */
+/* 1:1 SQUARE IMAGE RATIO WITH SELECT BUTTON (Cafe Mezban Style) */
 function buildOffers() {
     const container = document.getElementById("offers-container");
     if (!STRUCTURED_MENU.offers || STRUCTURED_MENU.offers.length === 0) {
@@ -425,6 +426,10 @@ function buildOffers() {
         var safe = JSON.stringify(o).replace(/\\/g,"\\\\").replace(/'/g,"\\'");
         let badgeStyle = o.isSoldOut ? 'background:#e11d48;' : '';
         let cardClick = o.isSoldOut ? "" : 'onclick=\'openModal('+safe+')\'';
+        
+        let actionTagHtml = o.isSoldOut 
+            ? '<span class="offer-select-tag" style="color:#e11d48; border-color:rgba(225,29,72,0.4);"><i class="fa-solid fa-circle-xmark"></i> Sold Out</span>'
+            : '<span class="offer-select-tag"><i class="fa-solid fa-plus"></i> Select Item</span>';
 
         return '<div class="offer-card '+(o.isSoldOut ? 'item-sold-out':'')+'" '+cardClick+' style="cursor:pointer;">'+
             '<div class="offer-left">'+
@@ -433,7 +438,10 @@ function buildOffers() {
                     '<h3>'+o.name+'</h3>'+
                     '<p>'+o.description+'</p>'+
                 '</div>'+
-                '<div class="offer-price">৳'+o.priceNum+'</div>'+
+                '<div class="offer-meta-box">'+
+                    '<div class="offer-price">৳'+o.priceNum+'</div>'+
+                    actionTagHtml +
+                '</div>'+
             '</div>'+
             '<div class="offer-right">'+
                 '<img class="offer-img" src="'+o.image+'" alt="'+o.name+'" onerror="this.src=\'https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=150&q=80\'">'+
@@ -543,7 +551,6 @@ function removeCartItem(itemName) {
     updateCartUI();
 }
 
-/* SYNCHRONIZE DATA TO LIVE SCREEN BILL AREA & FLOATING BAR */
 function updateCartUI() {
     let totalItems = 0;
     let totalPrice = 0;
@@ -553,7 +560,6 @@ function updateCartUI() {
         totalPrice += (item.price * item.qty);
     });
 
-    // ১. ভাসমান কার্ট বার আপডেট
     let floatBar = document.getElementById("floating-cart");
     if(totalItems > 0) {
         document.getElementById("float-cart-count").textContent = totalItems;
@@ -563,7 +569,6 @@ function updateCartUI() {
         floatBar.classList.remove("show");
     }
 
-    // ২. নিচের "Place an Order" এর টেবিল এরিয়া আপডেট
     let reviewArea = document.getElementById("cart-review-area");
     let fieldsArea = document.getElementById("checkout-form-fields");
 
@@ -605,7 +610,6 @@ function setOrderType(type) {
     document.getElementById("order-address-group").style.display = type==="delivery" ? "block" : "none";
 }
 
-/* COMPILE EVERYTHING INTO 1 SINGLE WHATSAPP MASSAGE */
 function sendCartOrderWhatsApp() {
     if(MY_CART.length === 0) { alert("আপনার কার্ট খালি!"); return; }
     
