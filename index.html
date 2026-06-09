@@ -93,21 +93,27 @@
         /* POPUP MODAL (Common) */
         .modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.8);z-index:2000;align-items:flex-end;justify-content:center;}
         .modal-overlay.open{display:flex;animation:fadeIn 0.2s ease;}
-        .modal-box{background:#1a1a22;border:1px solid var(--border-glass);border-radius:20px 20px 0 0;padding:28px 22px 35px;width:100%;max-width:440px;animation:slideUp 0.3s cubic-bezier(0.4,0,0.2,1);max-height:85vh;overflow-y:auto;position:relative;}
+        .modal-box{background:#111622;border:1px solid var(--border-glass);border-radius:20px 20px 0 0;padding:28px 22px 35px;width:100%;max-width:440px;animation:slideUp 0.3s cubic-bezier(0.4,0,0.2,1);max-height:85vh;overflow-y:auto;position:relative;}
         .modal-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px;}
         .modal-item-name{font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--gold);}
         .modal-item-price{color:var(--text-muted);font-size:0.9rem;}
         .modal-close{background:rgba(255,255,255,0.08);border:none;color:var(--text-muted);width:34px;height:34px;border-radius:50%;cursor:pointer;font-size:1rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:var(--transition);}
 
-        /* Developer Popup Style */
+        /* Custom Developer Popup Style Matching image_388f97.jpg */
         .dev-modal-content{text-align:center;padding:10px 5px;}
-        .dev-avatar{width:80px;height:80px;border-radius:50%;border:2px solid var(--gold);margin-bottom:15px;object-fit:cover;}
-        .dev-name{font-size:1.2rem;font-weight:600;color:var(--text-light);margin-bottom:5px;}
-        .dev-title{font-size:0.85rem;color:var(--gold);margin-bottom:15px;}
-        .dev-info-line{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:10px;color:var(--text-muted);font-size:0.9rem;}
-        .dev-info-line i{color:var(--gold);width:16px;}
-        .dev-info-line a{color:var(--text-muted);text-decoration:none;transition:var(--transition);}
-        .dev-info-line a:hover{color:var(--gold);}
+        .dev-icon{font-size:3.5rem;color:#f06a38;margin-bottom:15px;}
+        .dev-name{font-size:1.6rem;font-weight:600;color:#f06a38;margin-bottom:12px;font-family:'Poppins',sans-serif;}
+        .dev-desc{font-size:0.95rem;color:var(--text-light);margin-bottom:10px;line-height:1.5;font-weight:300;}
+        .dev-question{font-size:0.95rem;color:var(--text-light);margin-bottom:20px;line-height:1.5;font-weight:300;}
+        
+        .dev-phone-box{background:rgba(255,255,255,0.04);border-radius:30px;padding:12px;margin-bottom:20px;display:flex;align-items:center;justify-content:center;gap:10px;color:var(--text-light);font-size:1.15rem;font-weight:600;}
+        .dev-phone-box i{color:#25D366;}
+        
+        .btn-dev-contact{background:#f06a38;color:white;width:100%;font-weight:500;padding:14px;border-radius:30px;font-size:1rem;margin-bottom:20px;}
+        .btn-dev-contact:hover{background:#d9592b;transform:translateY(-2px);box-shadow:0 6px 15px rgba(240,106,56,0.3);}
+        
+        .dev-tags{font-size:0.82rem;color:var(--text-muted);display:flex;align-items:center;justify-content:center;gap:6px;}
+        .dev-tags i{color:#0284c7;}
 
         .qty-row{display:flex;align-items:center;background:rgba(255,255,255,0.04);border-radius:12px;padding:10px 14px;margin-bottom:20px;}
         .qty-label{font-size:0.85rem;color:var(--text-muted);}
@@ -143,8 +149,7 @@
         .social-icons a:hover{color:var(--gold);}
         .copyright{font-size:0.75rem;color:var(--text-muted);margin-bottom:4px;}
         
-        /* Highlighted Developer Text Style */
-        .dev-highlight{font-size:0.72rem;color:var(--text-muted);margin-top:2px;}
+        .dev-highlight{font-size:0.75rem;color:var(--text-muted);margin-top:4px;}
         .dev-highlight span{color:var(--gold);cursor:pointer;font-weight:500;text-decoration:underline;transition:var(--transition);}
         .dev-highlight span:hover{color:var(--gold-hover);}
 
@@ -272,7 +277,8 @@
         <a href="#"><i class="fa-brands fa-tiktok"></i></a>
     </div>
     <p class="copyright">© 2026 Roof Royal Restaurant. All rights reserved.</p>
-    <p class="dev-highlight">System Developed by <span onclick="openDevModal()">ZaydIT</span></p>
+    <!-- Updated Developer Highlight Area -->
+    <p class="dev-highlight">Developed by <span onclick="openDevModal()">Signature Agency</span></p>
 </footer>
 
 <!-- FLOATING CART BAR ELEMENT -->
@@ -325,31 +331,32 @@
     </div>
 </div>
 
-<!-- DEVELOPER DETAILS INFORMATION POPUP MODAL -->
+<!-- PERFECTLY FIXED DEVELOPER DETAILS MODAL (Exact match with image_388f97.jpg) -->
 <div class="modal-overlay" id="dev-modal" onclick="closeDevModalOverlay(event)">
     <div class="modal-box" style="align-self: center; border-radius: 20px; margin-bottom: 0;">
-        <div class="modal-header" style="margin-bottom: 5px;">
-            <div class="modal-item-name" style="font-size: 1.1rem; color: var(--gold); font-family: 'Poppins', sans-serif;">Developer Profile</div>
+        <div class="modal-header" style="margin-bottom: 5px; border: none;">
+            <div></div>
             <button class="modal-close" onclick="closeDevModal()"><i class="fa-solid fa-xmark"></i></button>
         </div>
         <div class="dev-modal-content">
-            <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=150&q=80" alt="ZaydIT Logo" class="dev-avatar" onerror="this.src='https://via.placeholder.com/150'">
-            <div class="dev-name">ZaydIT</div>
-            <div class="dev-title">Premium Software & Web Solution Expert</div>
+            <!-- Animated/Styled Laptop Code Icon as seen on screenshot image -->
+            <div class="dev-icon"><i class="fa-solid fa-laptop-code"></i></div>
             
-            <div class="dev-info-line">
-                <i class="fa-solid fa-globe"></i>
-                <a href="https://www.zaydit.com" target="_blank">www.zaydit.com</a>
+            <div class="dev-name">Signature Agency</div>
+            <div class="dev-desc">Digital innovation partner for restaurants & businesses.</div>
+            <div class="dev-question">Need a QR menu, graphics design, or online presence?</div>
+            
+            <div class="dev-phone-box">
+                <i class="fa-brands fa-whatsapp"></i> +880 1725-908500
             </div>
-            <div class="dev-info-line">
-                <i class="fa-solid fa-phone"></i>
-                <a href="tel:+8801979600757">+880 1979600757</a>
+            
+            <a href="https://wa.me/8801725908500" target="_blank" class="btn btn-dev-contact">
+                <i class="fa-brands fa-whatsapp"></i> Contact Developer
+            </a>
+            
+            <div class="dev-tags">
+                <i class="fa-solid fa-globe"></i> Website, Graphics, IT Training & Digital Marketing
             </div>
-            <div class="dev-info-line">
-                <i class="fa-solid fa-envelope"></i>
-                <a href="mailto:info@zaydit.com">info@zaydit.com</a>
-            </div>
-            <p style="font-size: 0.75rem; color: var(--text-muted); margin-top: 20px; line-height: 1.4;">Contact us today to build your custom business website, digital QR system, or tailored automation tools.</p>
         </div>
     </div>
 </div>
