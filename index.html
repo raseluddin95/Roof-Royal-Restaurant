@@ -139,7 +139,6 @@
 </head>
 <body>
 
-<!-- Loading Indicator -->
 <div class="loading-overlay" id="loading-layer">
     <div class="spinner"></div>
     <p style="color:var(--gold); font-family:'Poppins',sans-serif; font-size:0.95rem;">Loading Menu, Please Wait...</p>
@@ -156,7 +155,7 @@
 <section class="info-section glass-panel">
     <div class="info-grid">
         <div class="info-item"><i class="fa-solid fa-location-dot"></i><p><strong>Location</strong><br>Agnibina Road, Jhenaidah</p></div>
-        <div class="info-item"><i class="fa-solid fa-clock"></i><p><strong>Opening Hours</strong><br>10:00 AM &ndash; 11:00 PM</p></div>
+        <div class="info-item"><i class="fa-solid fa-clock"></i><p><strong>Opening Hours</strong><br>10:00 AM – 11:00 PM</p></div>
     </div>
     <div class="info-actions">
         <a href="tel:+8801979600757" class="btn btn-outline"><i class="fa-solid fa-phone"></i> Call Now</a>
@@ -180,18 +179,18 @@
     <h2 class="section-title">Place an Order</h2>
     <div class="order-form-container glass-panel">
         <div class="form-group">
-            <label>&#x1F374; মেনু বেছে নিন (Select Item)</label>
+            <label>🍴 মেনু বেছে নিন (Select Item)</label>
             <select class="order-menu-select" id="order-item">
                 <option value="">-- লোড হচ্ছে... --</option>
             </select>
         </div>
 
         <div class="qty-row">
-            <span class="qty-label">&#x1F522; পরিমাণ (Quantity)</span>
+            <span class="qty-label">🔢 পরিমাণ (Quantity)</span>
             <div class="qty-controls">
-                <button class="qty-btn" type="button" onclick="changeOrderQty(-1)">&#8722;</button>
+                <button class="qty-btn" type="button" onclick="changeOrderQty(-1)">−</button>
                 <span class="qty-num" id="order-qty-num">1</span>
-                <button class="qty-btn" type="button" onclick="changeOrderQty(1)">&#43;</button>
+                <button class="qty-btn" type="button" onclick="changeOrderQty(1)">+</button>
             </div>
         </div>
 
@@ -204,18 +203,18 @@
             <input type="tel" id="order-phone" class="form-control" placeholder="017xx-xxxxxx">
         </div>
 
-        <label style="font-size:0.82rem;color:var(--text-muted);margin-bottom:6px;display:block;">&#x1F4CD; অর্ডারের ধরন (Order Type)</label>
+        <label style="font-size:0.82rem;color:var(--text-muted);margin-bottom:6px;display:block;">📍 অর্ডারের ধরন (Order Type)</label>
         <div class="delivery-toggle" style="margin-bottom:14px;">
-            <button class="dtoggle-btn active" type="button" id="toggle-dine" onclick="setOrderType('dine')">&#x1F374; Dine In</button>
-            <button class="dtoggle-btn" type="button" id="toggle-delivery" onclick="setOrderType('delivery')">&#x1F6D5; Delivery</button>
+            <button class="dtoggle-btn active" type="button" id="toggle-dine" onclick="setOrderType('dine')">🍴 Dine In</button>
+            <button class="dtoggle-btn" type="button" id="toggle-delivery" onclick="setOrderType('delivery')">🛕 Delivery</button>
         </div>
 
         <div class="form-group" id="order-table-group">
-            <label>&#x1F4CB; টেবিল নম্বর (Table No.)</label>
+            <label>📋 টেবিল নম্বর (Table No.)</label>
             <input type="text" id="order-table" class="form-control" placeholder="e.g. Table 4">
         </div>
         <div class="form-group" id="order-address-group" style="display:none;">
-            <label>&#x1F3E0; ডেলিভারি ঠিকানা (Delivery Address)</label>
+            <label>🏠 ডেলিভারি ঠিকানা (Delivery Address)</label>
             <textarea id="order-address" class="form-control" rows="2" placeholder="পূর্ণ ঠিকানা লিখুন..."></textarea>
         </div>
 
@@ -243,13 +242,13 @@
 
 <footer>
     <div class="footer-logo">Roof Royal</div>
-    <p style="font-size:0.85rem;color:var(--text-muted);">Rooftop Dining &middot; Jhenaidah</p>
+    <p style="font-size:0.85rem;color:var(--text-muted);">Rooftop Dining · Jhenaidah</p>
     <div class="social-icons">
         <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
         <a href="#"><i class="fa-brands fa-instagram"></i></a>
         <a href="#"><i class="fa-brands fa-tiktok"></i></a>
     </div>
-    <p class="copyright">&copy; 2026 Roof Royal Restaurant. All rights reserved.</p>
+    <p class="copyright">© 2026 Roof Royal Restaurant. All rights reserved.</p>
 </footer>
 
 <nav class="bottom-nav">
@@ -265,7 +264,6 @@
     <a href="tel:+8801979600757" class="fab fab-call"><i class="fa-solid fa-phone"></i></a>
 </div>
 
-<!-- POPUP ORDER MODAL -->
 <div class="modal-overlay" id="order-modal" onclick="closeModalOverlay(event)">
     <div class="modal-box">
         <div class="modal-header">
@@ -277,11 +275,11 @@
         </div>
 
         <div class="qty-row">
-            <span class="qty-label">&#x1F522; পরিমাণ (Quantity)</span>
+            <span class="qty-label">🔢 পরিমাণ (Quantity)</span>
             <div class="qty-controls">
-                <button class="qty-btn" type="button" onclick="changeModalQty(-1)">&#8722;</button>
+                <button class="qty-btn" type="button" onclick="changeModalQty(-1)">−</button>
                 <span class="qty-num" id="modal-qty-num">1</span>
-                <button class="qty-btn" type="button" onclick="changeModalQty(1)">&#43;</button>
+                <button class="qty-btn" type="button" onclick="changeModalQty(1)">+</button>
             </div>
         </div>
 
@@ -294,24 +292,24 @@
             <input type="tel" id="modal-phone" class="form-control" placeholder="017xx-xxxxxx">
         </div>
 
-        <label style="font-size:0.82rem;color:var(--text-muted);margin-bottom:6px;display:block;">&#x1F4CD; অর্ডারের ধরন</label>
+        <label style="font-size:0.82rem;color:var(--text-muted);margin-bottom:6px;display:block;">📍 অর্ডারের ধরন</label>
         <div class="delivery-toggle">
-            <button class="dtoggle-btn active" type="button" id="modal-toggle-dine" onclick="setModalType('dine')">&#x1F374; Dine In</button>
-            <button class="dtoggle-btn" type="button" id="modal-toggle-delivery" onclick="setModalType('delivery')">&#x1F6D5; Delivery</button>
+            <button class="dtoggle-btn active" type="button" id="modal-toggle-dine" onclick="setModalType('dine')">🍴 Dine In</button>
+            <button class="dtoggle-btn" type="button" id="modal-toggle-delivery" onclick="setModalType('delivery')">🛕 Delivery</button>
         </div>
 
         <div class="form-group" id="modal-table-group" style="margin-top:14px;">
-            <label>&#x1F4CB; টেবিল নম্বর (Table No.)</label>
+            <label>📋 টেবিল নম্বর (Table No.)</label>
             <input type="text" id="modal-table" class="form-control" placeholder="e.g. Table 4">
         </div>
         <div class="form-group" id="modal-address-group" style="display:none;margin-top:14px;">
-            <label>&#x1F3E0; ডেলিভারি ঠিকানা</label>
+            <label>🏠 ডেলিভারি ঠিকানা</label>
             <textarea id="modal-address" class="form-control" rows="2" placeholder="পূর্ণ ঠিকানা লিখুন..."></textarea>
         </div>
 
         <div class="modal-total">
             <span>মোট মূল্য</span>
-            <strong id="modal-total">&#2547;0</strong>
+            <strong id="modal-total">৳0</strong>
         </div>
 
         <button class="btn btn-gold" style="width:100%;" onclick="sendModalOrder()">
@@ -322,46 +320,113 @@
 
 <script>
 /* ================================================================
-   ⚙️ CONFIGURATION: GOOGLE SHEET SYSTEM (CAFE MEZBAN STYLE)
+   ⚙️ CONFIGURATION: ADAPTED FOR GENERAL APPS SCRIPT OBJECTS
    ================================================================ */
 const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxtKHFd2VwkkZWISUS-SP6Uic1C77TUA2fZgX01YMCgirgTNfGdCofGsOg3cRIxId9K/exec";
 const WA_NUM = "8801979600757";
 
-let MENU_DATA = { offers: [], categories: [] };
+// গ্লোবাল ভ্যারিয়েবল এবং সেটিংস
+let RAW_SHEET_DATA = [];
+let STRUCTURED_MENU = { offers: [], categories: [] };
 let modalQty = 1, modalPriceNum = 0, modalOrderType = "dine";
 let orderQty  = 1, orderOrderType = "dine";
-let selectedModalItemRaw = null;
 
-// Show/Hide Spinner
 function toggleSpinner(show) {
     document.getElementById("loading-layer").style.display = show ? "flex" : "none";
 }
 
-/* ─── Fetch Data From Sheet ────────────────────────── */
+/* ─── Fetch Flat Data From Your Script ──────────────── */
 async function fetchMenuData() {
     toggleSpinner(true);
     try {
-        let response = await fetch(SCRIPT_URL + "?action=getMenu");
+        let response = await fetch(SCRIPT_URL);
         let data = await response.json();
-        MENU_DATA = data;
+        
+        if (Array.isArray(data)) {
+            RAW_SHEET_DATA = data;
+            processRawData(data);
+        } else {
+            console.error("Invalid response format. Expected an Array.");
+        }
+    } catch (err) {
+        console.error("Error fetching sheet data:", err);
+        alert("মেনু ডাটা লোড করা যায়নি। অনুগ্রহ করে গুগল শিট ডেপ্লয়মেন্ট চেক করুন।");
+    } finally {
         buildOffers();
         buildMenu();
-    } catch (err) {
-        console.error("Error fetching menu data:", err);
-        alert("মেনু লোড করতে সমস্যা হচ্ছে। অনুগ্রহ করে পেজটি রিফ্রেশ করুন।");
-    } finally {
         toggleSpinner(false);
     }
+}
+
+/* ─── Process Your Custom Sheet Columns Dynamically ── */
+function processRawData(rows) {
+    let categoriesMap = {};
+    let categoryOrder = [];
+    
+    rows.forEach(function(row) {
+        // কলামের নাম শিটের প্রথম হেডার রো থেকে অটোম্যাটিক ডিটেক্ট হবে
+        // আপনার শিটের কলাম হেডার ছোট বা বড় হাতের যাই হোক, তা ম্যাচ করবে
+        let catId    = (row["Category ID"] || row["category id"] || row["Category_ID"] || row["Category"] || "").toString().trim().toLowerCase();
+        let catLabel = (row["Category Label"] || row["category label"] || row["Category_Label"] || row["Category Name"] || row["Category"] || "").toString().trim();
+        let itemName = (row["Item Name"] || row["item name"] || row["Name"] || row["name"] || "").toString().trim();
+        let price    = parseFloat(row["Price"] || row["price"] || 0);
+        let desc     = (row["Description"] || row["description"] || row["Details"] || "").toString().trim();
+        let img      = (row["Image URL"] || row["image url"] || row["Image"] || row["image"] || "").toString().trim();
+        let isOffer  = (row["Is Offer"] || row["is offer"] || row["Offer"] || "").toString().trim().toLowerCase();
+        let badge    = (row["Badge"] || row["badge"] || "Special").toString().trim();
+
+        if (!itemName) return; // খাবারের নাম না থাকলে স্কিপ করবে
+
+        // যদি কোনো আইটেম স্পেশাল অফার হয় (যেমন Is Offer কলামে Yes বা True লেখা থাকে)
+        if (isOffer === "yes" || isOffer === "true" || catId === "offers" || catId === "offer") {
+            STRUCTURED_MENU.offers.push({
+                badge: badge,
+                title: itemName,
+                description: desc,
+                priceNum: price
+            });
+        } else {
+            // জেনারেল ক্যাটাগরি প্রসেসিং
+            if (!catId) catId = "general";
+            if (!catLabel) catLabel = "Our Menu";
+
+            if (!categoriesMap[catId]) {
+                categoriesMap[catId] = {
+                    id: catId,
+                    label: catLabel,
+                    items: []
+                };
+                categoryOrder.push(catId);
+            }
+
+            categoriesMap[catId].items.push({
+                name: itemName,
+                priceNum: price,
+                description: desc,
+                image: img || "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=150&q=80"
+            });
+        }
+    });
+
+    STRUCTURED_MENU.categories = categoryOrder.map(id => categoriesMap[id]);
 }
 
 /* ─── Build Offers ─────────────────────────────────── */
 function buildOffers() {
     const container = document.getElementById("offers-container");
-    if (!MENU_DATA.offers || MENU_DATA.offers.length === 0) {
-        container.innerHTML = '<p style="color:var(--text-muted); padding:10px;">No special offers available right now.</p>';
+    if (!STRUCTURED_MENU.offers || STRUCTURED_MENU.offers.length === 0) {
+        // অফার না থাকলে সেকশনটি সুন্দর দেখানোর জন্য কিছু ডেমো ডেটা দেওয়া হলো
+        container.innerHTML = `
+            <div class="offer-card">
+                <span class="offer-badge">Welcome</span>
+                <h3>Roof Royal Special</h3>
+                <p>Explore our premium live menu below and get instant food served at rooftop.</p>
+                <div class="offer-price">Fresh & Live</div>
+                <button class="offer-order-btn" onclick="location.href='#menu'"><i class="fa-solid fa-utensils"></i> View All Menu</button>
+            </div>`;
         return;
     }
-    container.innerHTML = MENU_DATA.offers.map(function(o) {
+    container.innerHTML = STRUCTURED_MENU.offers.map(function(o) {
         var safe = JSON.stringify(o).replace(/\\/g,"\\\\").replace(/'/g,"\\'");
         return '<div class="offer-card">'+
             '<span class="offer-badge">'+o.badge+'</span>'+
@@ -380,13 +445,13 @@ function buildMenu() {
     var selectEl = document.getElementById("order-item");
     tabsEl.innerHTML = ""; wrapper.innerHTML = "";
 
-    if(!MENU_DATA.categories || MENU_DATA.categories.length === 0){
-        selectEl.innerHTML = '<option value="">-- কোনো মেনু পাওয়া যায়নি --</option>';
+    if(!STRUCTURED_MENU.categories || STRUCTURED_MENU.categories.length === 0){
+        selectEl.innerHTML = '<option value="">-- নোটিফিকেশন: কোনো ডাটা পাওয়া যায়নি --</option>';
         return;
     }
 
     var optHtml = '<option value="">-- মেনু সিলেক্ট করুন --</option>';
-    MENU_DATA.categories.forEach(function(cat) {
+    STRUCTURED_MENU.categories.forEach(function(cat) {
         optHtml += '<optgroup label="'+cat.label+'">';
         cat.items.forEach(function(item, idx) {
             optHtml += '<option value="'+cat.id+"-"+idx+'" data-price="'+item.priceNum+'">'+item.name+' (৳'+item.priceNum+')</option>';
@@ -395,7 +460,7 @@ function buildMenu() {
     });
     selectEl.innerHTML = optHtml;
 
-    MENU_DATA.categories.forEach(function(cat, i) {
+    STRUCTURED_MENU.categories.forEach(function(cat, i) {
         var btn = document.createElement("button");
         btn.className = "tab-btn" + (i===0?" active":"");
         btn.textContent = cat.label;
@@ -420,13 +485,12 @@ function buildMenu() {
 }
 
 function switchTab(id) {
-    document.querySelectorAll(".tab-btn").forEach(function(b){ b.classList.toggle("active", b.textContent === MENU_DATA.categories.find(c=>c.id===id).label); });
+    document.querySelectorAll(".tab-btn").forEach(function(b){ b.classList.toggle("active", b.textContent === STRUCTURED_MENU.categories.find(c=>c.id===id).label); });
     document.querySelectorAll(".menu-grid").forEach(function(g){ g.classList.toggle("active", g.id==="grid-"+id); });
 }
 
 /* ─── Modal Functions ───────────────────────────────── */
 function openModal(item) {
-    selectedModalItemRaw = item;
     modalPriceNum = item.priceNum; modalQty = 1; modalOrderType = "dine";
     document.getElementById("modal-item-name").textContent = item.name || item.title;
     document.getElementById("modal-item-price").textContent = "৳" + modalPriceNum + " per item";
@@ -456,7 +520,7 @@ function setModalType(type) {
     document.getElementById("modal-address-group").style.display = type==="delivery" ? "block" : "none";
 }
 
-async function sendModalOrder() {
+function sendModalOrder() {
     var name  = document.getElementById("modal-name").value.trim();
     var phone = document.getElementById("modal-phone").value.trim();
     var table = document.getElementById("modal-table").value.trim();
@@ -468,37 +532,16 @@ async function sendModalOrder() {
     if(modalOrderType === "dine" && !table) { alert("টেবিল নম্বর লিখুন।"); return; }
     if(modalOrderType === "delivery" && !addr) { alert("ডেলিভারি ঠিকানা লিখুন।"); return; }
 
-    toggleSpinner(true);
-    
-    // Cafe Mezban Form Data Sheet Submission
-    let formData = new FormData();
-    formData.append("name", name);
-    formData.append("phone", phone);
-    formData.append("item", item);
-    formData.append("qty", modalQty);
-    formData.append("total", total);
-    formData.append("type", modalOrderType === "dine" ? "Dine In" : "Delivery");
-    formData.append("meta", modalOrderType === "dine" ? table : addr);
-
-    try {
-        await fetch(SCRIPT_URL, { method: "POST", body: formData });
+    var msg = "🍽️ *Roof Royal — New Order*\n\n"
+        + "🛒 Item: " + item + "\n"
+        + "💰 Price: ৳" + modalPriceNum + " × " + modalQty + " = ৳" + total + "\n"
+        + "👤 Name: " + name + "\n"
+        + "📞 Phone: " + phone + "\n"
+        + (modalOrderType==="dine" ? "📋 Table: " + table + "\n" : "📍 Address: " + addr + "\n")
+        + "\n_Order placed via Live QR Menu_";
         
-        // Success & WhatsApp Redirect
-        var msg = "🍽️ *Roof Royal — New Order*\n\n"
-            + "🛒 Item: " + item + "\n"
-            + "💰 Price: ৳" + modalPriceNum + " × " + modalQty + " = ৳" + total + "\n"
-            + "👤 Name: " + name + "\n"
-            + "📞 Phone: " + phone + "\n"
-            + (modalOrderType==="dine" ? "📋 Table: " + table + "\n" : "📍 Address: " + addr + "\n")
-            + "\n_Order placed and saved successfully!_";
-            
-        window.open("https://wa.me/"+WA_NUM+"?text="+encodeURIComponent(msg),"_blank");
-        closeModal();
-    } catch (err) {
-        alert("অর্ডার সাবমিট করতে সমস্যা হয়েছে, অনুগ্রহ করে আবার চেষ্টা করুন।");
-    } finally {
-        toggleSpinner(false);
-    }
+    window.open("https://wa.me/"+WA_NUM+"?text="+encodeURIComponent(msg),"_blank");
+    closeModal();
 }
 
 /* ─── Order Section Form Functions ─────────────────── */
@@ -523,7 +566,7 @@ function updateOrderTotal() {
     document.getElementById("order-total-row").style.display = "flex";
 }
 
-async function sendOrderWhatsApp() {
+function sendOrderWhatsApp() {
     var sel   = document.getElementById("order-item");
     var opt   = sel.options[sel.selectedIndex];
     var name  = document.getElementById("order-name").value.trim();
@@ -539,34 +582,15 @@ async function sendOrderWhatsApp() {
     var p = parseInt(opt.dataset.price)||0;
     var total = p * orderQty;
 
-    toggleSpinner(true);
-
-    let formData = new FormData();
-    formData.append("name", name);
-    formData.append("phone", phone);
-    formData.append("item", opt.text.split(' (')[0]);
-    formData.append("qty", orderQty);
-    formData.append("total", total);
-    formData.append("type", orderOrderType === "dine" ? "Dine In" : "Delivery");
-    formData.append("meta", orderOrderType === "dine" ? table : addr);
-
-    try {
-        await fetch(SCRIPT_URL, { method: "POST", body: formData });
+    var msg = "🍽️ *Roof Royal — New Order*\n\n"
+        + "🛒 Item: " + opt.text.split(' (')[0] + "\n"
+        + "💰 Total: ৳" + p + " × " + orderQty + " = ৳" + total + "\n"
+        + "👤 Name: " + name + "\n"
+        + "📞 Phone: " + phone + "\n"
+        + (orderOrderType==="dine" ? "📋 Table: " + table + "\n" : "📍 Address: " + addr + "\n")
+        + "\n_Order placed via Live QR Menu_";
         
-        var msg = "🍽️ *Roof Royal — New Order*\n\n"
-            + "🛒 Item: " + opt.text.split(' (')[0] + "\n"
-            + "💰 Total: ৳" + p + " × " + orderQty + " = ৳" + total + "\n"
-            + "👤 Name: " + name + "\n"
-            + "📞 Phone: " + phone + "\n"
-            + (orderOrderType==="dine" ? "📋 Table: " + table + "\n" : "📍 Address: " + addr + "\n")
-            + "\n_Order placed and saved successfully!_";
-            
-        window.open("https://wa.me/"+WA_NUM+"?text="+encodeURIComponent(msg),"_blank");
-    } catch (err) {
-        alert("দুঃখিত, অর্ডারটি প্রসেস করা সম্ভব হয়নি।");
-    } finally {
-        toggleSpinner(false);
-    }
+    window.open("https://wa.me/"+WA_NUM+"?text="+encodeURIComponent(msg),"_blank");
 }
 
 /* ─── Scroll nav highlight ───────────────────────────── */
