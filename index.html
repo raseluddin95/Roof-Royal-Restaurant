@@ -32,7 +32,7 @@
         .info-actions{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:20px;padding-top:20px;border-top:1px solid var(--border-glass);}
         .info-actions .btn{font-size:0.85rem;padding:10px 18px;}
 
-        /* OFFERS SECTION CENTER ALIGNED */
+        /* OFFERS SECTION - CENTER ALIGNED FOR DESKTOP */
         .offers-section{padding:0 20px 40px;}
         .offer-slider{display:flex;gap:20px;overflow-x:auto;padding-bottom:15px;scrollbar-width:none;justify-content:center;}
         @media(max-width:767px){
@@ -75,7 +75,6 @@
         .modal-close{background:rgba(255,255,255,0.08);border:none;color:var(--text-muted);width:34px;height:34px;border-radius:50%;cursor:pointer;font-size:1rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:var(--transition);}
         .modal-close:hover{background:rgba(255,255,255,0.15);color:var(--text-light);}
 
-        /* Quantity row */
         .qty-row{display:flex;align-items:center;background:rgba(255,255,255,0.04);border-radius:12px;padding:10px 14px;margin-bottom:14px;}
         .qty-label{font-size:0.85rem;color:var(--text-muted);}
         .qty-controls{display:flex;align-items:center;gap:12px;margin-left:auto;}
@@ -83,7 +82,6 @@
         .qty-btn:hover{background:var(--gold);color:#111;border-color:var(--gold);}
         .qty-num{font-size:1.1rem;font-weight:600;min-width:26px;text-align:center;}
 
-        /* Delivery toggle */
         .delivery-toggle{display:flex;gap:0;margin-bottom:14px;border-radius:10px;overflow:hidden;border:1px solid var(--border-glass);}
         .dtoggle-btn{flex:1;padding:10px;background:rgba(255,255,255,0.04);border:none;color:var(--text-muted);font-family:'Poppins',sans-serif;font-size:0.85rem;cursor:pointer;transition:var(--transition);}
         .dtoggle-btn.active{background:var(--gold);color:#111;font-weight:600;}
@@ -101,7 +99,6 @@
         .order-section{padding:0 20px 40px;}
         .order-form-container{padding:25px;max-width:500px;margin:0 auto;}
 
-        /* Menu select in order form */
         .order-menu-select{width:100%;background:rgba(255,255,255,0.05);border:1px solid var(--border-glass);padding:11px 14px;border-radius:10px;color:var(--text-light);font-family:'Poppins',sans-serif;font-size:0.92rem;transition:var(--transition);appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23dfb76c' d='M6 8L0 0h12z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;}
         .order-menu-select:focus{outline:none;border-color:var(--gold);}
         .order-menu-select option{background:#1a1a22;color:var(--text-light);}
@@ -117,7 +114,7 @@
         .social-icons a:hover{color:var(--gold);}
         .copyright{font-size:0.75rem;color:var(--text-muted);margin-bottom:6px;}
         
-        /* HIGHLIGHTED DEV CREDIT IN FOOTER */
+        /* HIGHLIGHTED DEVELOPER CREDIT LINE */
         .dev-credit {font-size:0.8rem;color:var(--text-muted);margin-top:8px;}
         .dev-credit-link {color:var(--gold);text-decoration:none;font-weight:500;cursor:pointer;border-bottom:1px dashed var(--gold);padding-bottom:1px;transition:var(--transition);}
         .dev-credit-link:hover {color:var(--gold-hover);border-bottom-style:solid;}
@@ -250,6 +247,7 @@
         <a href="#"><i class="fa-brands fa-tiktok"></i></a>
     </div>
     <p class="copyright">© 2025 Roof Royal Restaurant. All rights reserved.</p>
+    <!-- DEVELOPER OPTION LINK ADDED HERE -->
     <div class="dev-credit">
         Developed by <span class="dev-credit-link" onclick="openDevModal()">Signature Agency</span> — Digital solutions for modern business
     </div>
@@ -268,6 +266,7 @@
     <a href="tel:+8801725908500" class="fab fab-call"><i class="fa-solid fa-phone"></i></a>
 </div>
 
+<!-- POPUP ORDER MODAL -->
 <div class="modal-overlay" id="order-modal" onclick="closeModalOverlay(event)">
     <div class="modal-box">
         <div class="modal-header">
@@ -322,6 +321,7 @@
     </div>
 </div>
 
+<!-- DEVELOPER INFORMATION POPUP MODAL (CAFE MEZBAN STYLE) -->
 <div class="modal-overlay" id="dev-modal" onclick="closeDevModalOverlay(event)">
     <div class="modal-box" style="text-align: center;">
         <div class="modal-header" style="justify-content: flex-end;">
@@ -342,7 +342,7 @@
 
 <script>
 /* ================================================================
-   ✏️  শুধু এই MENU_DATA অংশটা edit করুন মেনু আপডেট করতে
+   ✏️ MENU_DATA (আপনার কারেন্ট লাইভ মেনু ডেটা হুবহু এখানে রাখা হয়েছে)
    ================================================================ */
 const MENU_DATA = {
   offers: [
@@ -361,4 +361,222 @@ const MENU_DATA = {
       id: "main", label: "Main Food",
       items: [
         { name: "Sizzling Chicken Steak",  price: "\u09F3450", priceNum: 450, description: "Served hot with sauteed vegetables, mushroom sauce, and fried rice.",    image: "https://images.unsplash.com/photo-1432139555190-58524dae6a55?auto=format&fit=crop&w=150&q=80" },
-        { name: "Pasta & French Fry",      price: "\u09F3150", priceNum: 150,
+        { name: "Pasta & French Fry",      price: "\u09F3150", priceNum: 150, description: "Deshi potato with hot sauce and chinese pasta.",                          image: "https://plus.unsplash.com/premium_photo-1664478288635-b9703a502393?auto=format&fit=crop&w=150&q=80" }
+      ]
+    },
+    {
+      id: "biriyani", label: "Biriyani",
+      items: [
+        { name: "Premium Mutton Kacchi",   price: "\u09F3350", priceNum: 350, description: "Basmati rice slow-cooked with tender mutton pieces and aromatic spices.", image: "https://images.unsplash.com/photo-1633945274405-b6c8069047b0?auto=format&fit=crop&w=150&q=80" }
+      ]
+    },
+    {
+      id: "pizza", label: "Pizza & Fast Food",
+      items: [
+        { name: "Royal Cheese Blast Pizza",price: "\u09F3550", priceNum: 550, description: "10-inch loaded chicken pizza overflowing with liquid mozzarella.",        image: "https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=150&q=80" },
+        { name: "Hot Burger",              price: "\u09F3190", priceNum: 190, description: "Delicious chicken burger with french fry.",                                image: "https://images.unsplash.com/photo-1551782450-17144efb9c50?auto=format&fit=crop&w=150&q=80" }
+      ]
+    },
+    {
+      id: "drinks", label: "Drinks",
+      items: [
+        { name: "Royal Blue Mocktail",     price: "\u09F3150", priceNum: 150, description: "Blue curacao syrup, lemon juice, and soda \u2014 a refreshing signature drink.", image: "https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&w=150&q=80" },
+        { name: "Fresh Mango Lassi",       price: "\u09F3120", priceNum: 120, description: "Thick blended yoghurt with ripe Bangladeshi mangoes and a hint of cardamom.",    image: "https://images.unsplash.com/photo-1553361371-9b22f78e8b1d?auto=format&fit=crop&w=150&q=80" },
+        { name: "Cool Coffee",             price: "\u09F3110", priceNum: 110, description: "Instant energetic pure deshi cold coffee.",                                        image: "https://images.unsplash.com/photo-1643974148852-eb1b092f4cf4?auto=format&fit=crop&w=150&q=80" }
+      ]
+    },
+    {
+      id: "sweet", label: "Sweet",
+      items: [
+        { name: "Chocolate Lava Cake",     price: "\u09F3220", priceNum: 220, description: "Warm dark chocolate cake with a gooey molten centre, served with vanilla ice cream.", image: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=150&q=80" }
+      ]
+    }
+  ]
+};
+
+const WA = "8801725908500";
+let modalQty = 1, modalPriceNum = 0, modalOrderType = "dine";
+let orderQty  = 1, orderOrderType = "dine";
+
+/* ─── Build Offers ─────────────────────────────────── */
+function buildOffers() {
+    document.getElementById("offers-container").innerHTML = MENU_DATA.offers.map(function(o) {
+        var safe = JSON.stringify(o).replace(/\\/g,"\\\\").replace(/'/g,"\\'");
+        return '<div class="offer-card">'+
+            '<span class="offer-badge">'+o.badge+'</span>'+
+            '<h3>'+o.title+'</h3>'+
+            '<p>'+o.description+'</p>'+
+            '<div class="offer-price">'+o.price+'</div>'+
+            '<button class="offer-order-btn" onclick=\'openModal('+safe+')\'><i class="fa-brands fa-whatsapp"></i> Tap to Order</button>'+
+        '</div>';
+    }).join("");
+}
+
+/* ─── Build Menu ────────────────────────────────────── */
+function buildMenu() {
+    var tabsEl = document.getElementById("category-tabs");
+    var wrapper = document.getElementById("menu-grids-wrapper");
+    var selectEl = document.getElementById("order-item");
+    tabsEl.innerHTML = ""; wrapper.innerHTML = "";
+
+    var optHtml = '<option value="">-- মেনু সিলেক্ট করুন --</option>';
+    MENU_DATA.categories.forEach(function(cat) {
+        optHtml += '<optgroup label="'+cat.label+'">';
+        cat.items.forEach(function(item, idx) {
+            optHtml += '<option value="'+cat.id+"-"+idx+'" data-price="'+item.priceNum+'">'+item.name+' ('+item.price+')</option>';
+        });
+        optHtml += '</optgroup>';
+    });
+    selectEl.innerHTML = optHtml;
+
+    MENU_DATA.categories.forEach(function(cat, i) {
+        var btn = document.createElement("button");
+        btn.className = "tab-btn" + (i===0?" active":"");
+        btn.textContent = cat.label;
+        btn.onclick = function(){ switchTab(cat.id); };
+        tabsEl.appendChild(btn);
+
+        var grid = document.createElement("div");
+        grid.className = "menu-grid" + (i===0?" active":"");
+        grid.id = "grid-" + cat.id;
+        grid.innerHTML = cat.items.map(function(item) {
+            var safe = JSON.stringify(item).replace(/\\/g,"\\\\").replace(/'/g,"\\'");
+            return '<div class="menu-card glass-panel" onclick=\'openModal('+safe+')\'>'+
+                '<img class="menu-img" src="'+item.image+'" alt="'+item.name+'" loading="lazy" onerror="this.src=\'https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=150&q=80\'">'+
+                '<div class="menu-details">'+
+                    '<div class="menu-meta"><span class="menu-title">'+item.name+'</span><span class="menu-price">'+item.price+'</span></div>'+
+                    '<p class="menu-desc">'+item.description+'</p>'+
+                    '<span class="tap-order-tag"><i class="fa-brands fa-whatsapp"></i> Tap to Order</span>'+
+                '</div></div>';
+        }).join("");
+        wrapper.appendChild(grid);
+    });
+}
+
+function switchTab(id) {
+    document.querySelectorAll(".tab-btn").forEach(function(b,i){ b.classList.toggle("active", MENU_DATA.categories[i].id===id); });
+    document.querySelectorAll(".menu-grid").forEach(function(g){ g.classList.toggle("active", g.id==="grid-"+id); });
+}
+
+/* ─── Modal ─────────────────────────────────────────── */
+function openModal(item) {
+    modalPriceNum = item.priceNum; modalQty = 1; modalOrderType = "dine";
+    document.getElementById("modal-item-name").textContent = item.name;
+    document.getElementById("modal-item-price").textContent = item.price + " per item";
+    document.getElementById("modal-qty-num").textContent = "1";
+    document.getElementById("modal-total").textContent = item.price;
+    document.getElementById("modal-name").value = "";
+    document.getElementById("modal-phone").value = "";
+    document.getElementById("modal-table").value = "";
+    if(document.getElementById("modal-address")) document.getElementById("modal-address").value = "";
+    setModalType("dine");
+    document.getElementById("order-modal").classList.add("open");
+    document.body.style.overflow = "hidden";
+}
+function closeModal(){ document.getElementById("order-modal").classList.remove("open"); document.body.style.overflow=""; }
+function closeModalOverlay(e){ if(e.target===document.getElementById("order-modal")) closeModal(); }
+
+function changeModalQty(d) {
+    modalQty = Math.max(1, modalQty+d);
+    document.getElementById("modal-qty-num").textContent = modalQty;
+    document.getElementById("modal-total").textContent = "\u09F3" + (modalPriceNum*modalQty);
+}
+/* ─── Order Types ───────────────────────────────────── */
+function setModalType(type) {
+    modalOrderType = type;
+    document.getElementById("modal-toggle-dine").classList.toggle("active", type==="dine");
+    document.getElementById("modal-toggle-delivery").classList.toggle("active", type==="delivery");
+    document.getElementById("modal-table-group").style.display   = type==="dine"     ? "block" : "none";
+    document.getElementById("modal-address-group").style.display = type==="delivery" ? "block" : "none";
+}
+function sendModalOrder() {
+    var name  = document.getElementById("modal-name").value.trim();
+    var phone = document.getElementById("modal-phone").value.trim();
+    var table = document.getElementById("modal-table").value.trim();
+    var addr  = document.getElementById("modal-address").value.trim();
+    var item  = document.getElementById("modal-item-name").textContent;
+    var total = modalPriceNum * modalQty;
+    var msg = "\uD83C\uDF7D\uFE0F *Roof Royal \u2014 New Order*\n\n"
+        + "\uD83D\uDED2 Item: " + item + "\n"
+        + "\uD83D\uDCB0 Price: \u09F3" + modalPriceNum + " \u00D7 " + modalQty + " = \u09F3" + total + "\n"
+        + (name  ? "\uD83D\uDC64 Name: " + name + "\n" : "")
+        + (phone ? "\uD83D\uDCDE Phone: " + phone + "\n" : "")
+        + (modalOrderType==="dine"     && table ? "\uD83D\uDCCB Table: " + table + "\n" : "")
+        + (modalOrderType==="delivery" && addr  ? "\uD83D\uDCCD Address: " + addr  + "\n" : "")
+        + "\n_Order placed from website_";
+    window.open("https://wa.me/"+WA+"?text="+encodeURIComponent(msg),"_blank");
+    closeModal();
+}
+
+/* ─── Order Section ──────────────────────────────────── */
+function changeOrderQty(d) {
+    orderQty = Math.max(1, orderQty+d);
+    document.getElementById("order-qty-num").textContent = orderQty;
+    updateOrderTotal();
+}
+function setOrderType(type) {
+    orderOrderType = type;
+    document.getElementById("toggle-dine").classList.toggle("active", type==="dine");
+    document.getElementById("toggle-delivery").classList.toggle("active", type==="delivery");
+    document.getElementById("order-table-group").style.display   = type==="dine"     ? "block" : "none";
+    document.getElementById("order-address-group").style.display = type==="delivery" ? "block" : "none";
+}
+function updateOrderTotal() {
+    var sel = document.getElementById("order-item");
+    var opt = sel.options[sel.selectedIndex];
+    if(!opt || !opt.dataset.price){ document.getElementById("order-total-row").style.display="none"; return; }
+    var p = parseInt(opt.dataset.price)||0;
+    document.getElementById("order-total-display").textContent = "\u09F3" + (p*orderQty);
+    document.getElementById("order-total-row").style.display = "flex";
+}
+document.addEventListener("DOMContentLoaded", function(){
+    document.getElementById("order-item").addEventListener("change", function(){ orderQty=1; document.getElementById("order-qty-num").textContent="1"; updateOrderTotal(); });
+});
+function sendOrderWhatsApp() {
+    var sel   = document.getElementById("order-item");
+    var opt   = sel.options[sel.selectedIndex];
+    var name  = document.getElementById("order-name").value.trim();
+    var phone = document.getElementById("order-phone").value.trim();
+    var table = document.getElementById("order-table").value.trim();
+    var addr  = document.getElementById("order-address").value.trim();
+    if(!opt||!opt.value){ alert("মেনু সিলেক্ট করুন।"); return; }
+    var p = parseInt(opt.dataset.price)||0;
+    var total = p * orderQty;
+    var msg = "\uD83C\uDF7D\uFE0F *Roof Royal \u2014 New Order*\n\n"
+        + "\uD83D\uDED2 Item: " + opt.text + "\n"
+        + "\uD83D\uDCB0 Total: \u09F3" + p + " \u00D7 " + orderQty + " = \u09F3" + total + "\n"
+        + (name  ? "\uD83D\uDC64 Name: " + name + "\n" : "")
+        + (phone ? "\uD83D\uDCDE Phone: " + phone + "\n" : "")
+        + (orderOrderType==="dine"     && table ? "\uD83D\uDCCB Table: " + table + "\n" : "")
+        + (orderOrderType==="delivery" && addr  ? "\uD83D\uDCCD Address: " + addr  + "\n" : "")
+        + "\n_Order placed from website_";
+    window.open("https://wa.me/"+WA+"?text="+encodeURIComponent(msg),"_blank");
+}
+
+/* ─── Developer Modal Feature (Cafe Mezban Style Popup) ─ */
+function openDevModal() {
+    document.getElementById("dev-modal").classList.add("open");
+    document.body.style.overflow = "hidden";
+}
+function closeDevModal() {
+    document.getElementById("dev-modal").classList.remove("open");
+    document.body.style.overflow = "";
+}
+function closeDevModalOverlay(e) {
+    if(e.target === document.getElementById("dev-modal")) closeDevModal();
+}
+
+/* ─── Scroll nav highlight ───────────────────────────── */
+var sections = ["home","offers","menu","order","location"];
+window.addEventListener("scroll", function(){
+    var current = "home";
+    sections.forEach(function(id){ var el=document.getElementById(id); if(el&&el.getBoundingClientRect().top<=80) current=id; });
+    document.querySelectorAll(".nav-item").forEach(function(a){ a.classList.toggle("active",a.getAttribute("href")==="#"+current); });
+});
+
+/* ─── Boot ───────────────────────────────────────────── */
+buildOffers();
+buildMenu();
+</script>
+</body>
+</html>
